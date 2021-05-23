@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:#1c4e8d;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.row{
+    margin:0;
+}
+.container{
+    padding:10px 0;
+}
+header, .navbar{
+    background-color: white;
+}
+
+#logo{
+    width:25%;
+}
+.navbar-brand{
+    padding: 10px;
+    
+}
+
+#link, #navdrop{
+    color:#162a4b;
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+} 
+.card{
+    margin-top: 170px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto; 
+    
+}
+#txt{
+    text-indent: 1rem;
+}
+
+#rodape{
+    margin-top: 30px;
+    width: 100%;
+    height: 95px;
+    background-color:#162a4b;
+    color:#dddddd; 
+}
+
+#esquerda{
+    float:left;
+    font-size: 14px;
+}
+
+#centro{
+    text-align: center;
+}
+
+.icone{
+    width:2%;
+    float:right;
+    margin: 10px;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fale Conosco</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="faleconosco.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    function VerificaCPF() {
+      strCpf = document.getElementById('cpf').value;
+      var soma = 0;
+      var resto;
+      var valido = 0;
+      if (strCpf == "00000000000" || strCpf.length != 11) {
+        alert("CPF Inválido");
+        return false;
+      }
+      for (i = 1; i <= 9; i++) {
+        soma = soma + parseInt(strCpf.substring(i - 1, i)) * (11 - i);
+      }
+
+      resto = soma % 11;
+      if (resto == 10 || resto == 11 || resto < 2) {
+        resto = 0;
+      } else {
+        resto = 11 - resto;
+      }
+
+      if (resto != parseInt(strCpf.substring(9, 10))) {
+        console.log(strCpf);
+        return false;
+      }
+
+      soma = 0;
+      for (i = 1; i <= 10; i++) {
+        soma = soma + parseInt(strCpf.substring(i - 1, i)) * (12 - i);
+      }
+
+      resto = soma % 11;
+      if (resto == 10 || resto == 11 || resto < 2) {
+        resto = 0;
+      } else {
+        resto = 11 - resto;
+      }
+
+      if (resto != parseInt(strCpf.substring(10, 11))) {
+        alert("CPF Inválido");
+        return false;
+      }
+      return true;
+    };
+  </script>
+  <header class="row">
+    <nav class="navbar navbar-expand-md fixed-top shadow p-3 mb-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo-hor.png" width="250" class="d-inline-block align-top" alt="">
+      </a>
+      <button class="navbar-toggler" data-target="#mynav" data-toggle="collapse" aria-controls="mynav"
+        aria-expanded="false" aria-label="Toggle navigation" type="button">Menu</button>
+      <div class="navbar-collapse collapse justify-content-md-end" id="mynav">
+        <ul class="navbar-nav">
+          <li class="nav-link ml-auto ">
+            <a class="nav-link text-uppercase" href="index.html" id="link">Home</a>
+          </li>
+          <li class="nav-link">
+            <a class="nav-link text-uppercase" href="quemsomos.html" id="link">Quem somos</a>
+          </li>
+          <li class="nav-link dropdown">
+            <a class="nav-link dropdown-toggle text-uppercase" href="#" data-toggle="dropdown" id="navdrop">Nossos
+              serviços</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item text-uppercase" href="projetos.html" id="link">Projetos</a>
+              <a class="dropdown-item text-uppercase" href="consultoria.html" id="link">Consultoria</a>
+
+            </div>
+          </li>
+          <li class="nav-link">
+            <a class="nav-link text-uppercase" href="faleconosco.html" id="link">Fale conosco</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+
+    <div class="container shadow p-3 mb-5  word-wrap: break-word">
+      <div class="row">
+        <div class="col-md-5 word-wrap: break-word">
+          <aside>
+            <p>Olá! Este é nosso canal de comunicação, fale-conosco e tire suas dúvidas, nossa equipe o responderá o
+              mais rápido possível.</p>
+            <p>Caso prefira estamos também no e-mail: lotusengenharia.ce@gmail.com ou no telefone: (85) 99981-8820.</p>
+            <p>Será um prazer lhe atender!</p>
+          </aside>
+        </div>
+         <div class="col-md-7">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputname1">Nome</label>
+              <input id="Nome" name="Nome" placeholder="seu nome" class="form-control input-md" required="" type="text">
+            </div>
+            <div class="form-group">
+              <label for="cpf"> CPF</label>
+              <input onblur="VerificaCPF(this)" type="text" placeholder="Insira apenas os números" id="cpf"
+                class="form-control input-md" />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputarea1">Area de atuação</label>
+              <input id="area" name="area" class="form-control input-md" type="text">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">E-mail</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Seu email">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Mensagem:</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-light">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="rodape">
+    <p id="esquerda">
+      CONTATOS:<br />
+      (85) 99981-8820<br />
+      Email: lotusengenharia.ce@gmail.com<br />
+      Copyright © 2020 | MPM</p>
+    <a href="#" target="blank"><img src="facebook.png" class="icone"></a>
+    <a href="https://www.instagram.com/lotusengenharia_ce/" target="blank"><img src="instagram.png"
+        class="icone"></a>
+    <a href="#" target="blank"><img src="linkedin.png" class="icone"></a>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
